@@ -1,24 +1,15 @@
-public class Student {
-    private String name;
-    private int age;
+import java.util.Objects;
+public class Student extends Person{
+    private String id;
     private double gpa;
 
-    public Student(String name, int age, double gpa) {
-        this.name = name;
-        this.age = age;
+    public Student(String name, int age, String id, double gpa) {
+        super(name,age);
+        this.id = id;
         this.gpa = gpa;
     }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
+    public String getid() {
+        return id;
     }
     public double getGpa() {
         return gpa;
@@ -26,7 +17,30 @@ public class Student {
     public void setGpa(double gpa) {
         this.gpa = gpa;
     }
-    public void displayInfo() {
-        System.out.println("Student: " + name + ", Age: " + age + ", GPA: " + gpa);
+
+    @Override
+    public void info() {
+        System.out.println("Student: " + getName() + ", GPA: " + gpa);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{name=" + getName() +
+                ", age=" + getAge() +
+                ", id=" + id +
+                ", gpa=" + gpa + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student s = (Student) o;
+        return Objects.equals(id, s.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
