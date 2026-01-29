@@ -1,19 +1,23 @@
 import java.util.Objects;
-public class Student extends Person{
+
+public class Student extends Person {
     private String id;
     private double gpa;
 
     public Student(String name, int age, String id, double gpa) {
-        super(name,age);
+        super(name, age);
         this.id = id;
         this.gpa = gpa;
     }
-    public String getid() {
+
+    public String getId() {
         return id;
     }
+
     public double getGpa() {
         return gpa;
     }
+
     public void setGpa(double gpa) {
         this.gpa = gpa;
     }
@@ -21,14 +25,6 @@ public class Student extends Person{
     @Override
     public void info() {
         System.out.println("Student: " + getName() + ", GPA: " + gpa);
-    }
-
-    @Override
-    public String toString() {
-        return "Student{name=" + getName() +
-                ", age=" + getAge() +
-                ", id=" + id +
-                ", gpa=" + gpa + "}";
     }
 
     @Override

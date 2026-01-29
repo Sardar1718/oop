@@ -14,32 +14,17 @@ public class Teacher extends Person {
         return subject;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
     public int getExperienceYears() {
         return experienceYears;
     }
 
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
-    }
-
     @Override
     public void info() {
-        System.out.println("Teacher: " + getName() +
-                ", Subject: " + subject +
-                ", Experience: " + experienceYears + " years");
-    }
-
-    @Override
-    public String toString() {
-        return "Teacher{name=" + getName() +
-                ", age=" + getAge() +
-                ", subject=" + subject +
-                ", experienceYears=" + experienceYears +
-                "}";
+        System.out.println(
+                "Teacher: " + getName() +
+                        ", Subject: " + subject +
+                        ", Experience: " + experienceYears + " years"
+        );
     }
 
     @Override
